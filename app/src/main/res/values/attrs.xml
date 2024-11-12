@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="LabelledTextInput">
+        <attr name="labelText" format="string"/>
+        <attr name="hintText" format="string"/>
+    </declare-styleable>
+    <declare-styleable name="CustomTopNav">
+        <attr name="titleText" format="string" />
+    </declare-styleable>
+    <declare-styleable name="CustomPasswordInput">
+        <attr name="hintTextWIcon" format="string" />
+        <attr name="boxBackgroundColor" format="color" />
+        <attr name="iconRight" format="reference"/>
+        <attr name="iconRightMode" format="string"/>
+        <attr name="iconLeft" format="reference"/>
+    </declare-styleable>
+</resources>

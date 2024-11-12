@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.example.coremovie.presentation.customview.CustomTopNav
+        android:id="@+id/customTopNav"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:titleText="Menu" />
+
+    <com.example.coremovie.presentation.customview.LabelledTextInput
+        android:id="@+id/lTIname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:hintText="Masukkan nama Anda"
+        app:labelText="Nama Lengkap"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/customTopNav" />
+
+    <com.example.coremovie.presentation.customview.LabelledTextInput
+        android:id="@+id/lTIUsername"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:hintText="Masukkan nama Anda"
+        app:labelText="Username"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lTIname" />
+
+    <com.example.coremovie.presentation.customview.CustomTextInputWIcon
+        android:id="@+id/customPasswordInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:boxBackgroundColor="@color/backgroundColor"
+        app:hintTextWIcon="Enter PIN"
+        app:iconRight="@drawable/icon_password"
+        app:iconRightMode="password_toggle"
+        app:layout_constraintTop_toBottomOf="@+id/lTIUsername" />
+
+    <com.example.coremovie.presentation.customview.CustomTextInputWIcon
+        android:id="@+id/customUsernameInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:boxBackgroundColor="@color/backgroundColor"
+        app:hintTextWIcon="Username"
+        app:iconRight="@drawable/icon_username"
+        app:layout_constraintTop_toBottomOf="@+id/customPasswordInput" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

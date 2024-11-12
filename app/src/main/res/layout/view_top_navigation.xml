@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/llTopnav"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_alignParentTop="true"
+    android:gravity="left"
+    android:orientation="horizontal"
+    android:padding="20dp">
+
+    <ImageView
+        android:id="@+id/ivBack"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_gravity="center"
+        android:layout_marginRight="10dp"
+        android:layout_weight="0"
+        android:src="@drawable/icon_back" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/txtTitle"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:fontFamily="@font/poppinsmedium"
+        android:foregroundGravity="center_vertical|center"
+        android:gravity="center"
+        android:text="Profile"
+        android:textColor="@color/textColorPrimary"
+        android:textSize="18sp" />
+
+    <ImageView
+        android:id="@+id/ivMenu"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_gravity="center"
+        android:layout_weight="0"
+        android:src="@drawable/icon_threedot" />
+
+</LinearLayout>

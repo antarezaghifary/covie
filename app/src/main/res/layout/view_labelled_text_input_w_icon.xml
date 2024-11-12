@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="PIN"
+        android:textColorHint="@color/customRed"
+        app:boxBackgroundColor="@color/backgroundColor"
+        app:boxBackgroundMode="filled"
+        app:boxCornerRadiusBottomEnd="15dp"
+        app:boxCornerRadiusBottomStart="15dp"
+        app:boxStrokeColor="@color/customRed"
+        app:boxStrokeErrorColor="@color/customRed"
+        app:boxStrokeWidth="0dp"
+        app:boxStrokeWidthFocused="0dp"
+        app:endIconTint="@color/textColorPrimary"
+        app:hintTextColor="@color/customRed"
+        app:startIconDrawable="@drawable/icon_password"
+        app:startIconTint="@color/textColorPrimary">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppinsmedium"
+            android:imeOptions="actionDone"
+            android:inputType="numberPassword"
+            android:padding="30dp"
+            android:textColor="@color/textColorPrimary"
+            android:textSize="16sp"
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+</LinearLayout>

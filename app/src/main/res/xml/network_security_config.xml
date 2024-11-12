@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<network-security-config xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Allow only secure HTTPS connections (no HTTP) -->
+    <domain-config cleartextTrafficPermitted="false"
+        tools:ignore="NetworkSecurityConfig">
+    </domain-config>
+
+    <!-- Trust system certificates (this is default, but can be customized) -->
+    <trust-anchors tools:ignore="NetworkSecurityConfig">
+        <certificates src="system" />
+    </trust-anchors>
+
+</network-security-config>
