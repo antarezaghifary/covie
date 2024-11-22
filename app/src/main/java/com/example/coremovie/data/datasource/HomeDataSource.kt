@@ -22,18 +22,7 @@ class HomeDataSource @Inject constructor(
 
         try {
             // Check if the response is successful
-            if (response.isSuccessful) {
-                response.body()?.let { data ->
-                    emit(Resource.Success(data)) // Emit successful response with data
-                } ?: emit(Resource.Error(error = ERROR.General, "Empty response body"))
-            } else {
-                emit(
-                    Resource.Error(
-                        error = ERROR.General,
-                        "Error: ${response.code()} - ${response.message()}"
-                    )
-                )
-            }
+            emit(Resource.Success(response))
         } catch (e: Exception) {
             // Handle exceptions (like network errors)
             emit(Resource.Error(error = ERROR.General, "Exception: ${e.message}"))

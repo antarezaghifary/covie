@@ -8,22 +8,17 @@ import com.example.coremovie.domain.usecase.HomeUsecase
 import com.example.coremovie.util.ERROR
 import com.example.coremovie.util.Resource
 import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.flow.flow
 import javax.inject.Inject
 
 class HomeInteractor @Inject constructor(
-    private val context: Context,
-    private val repo: HomeRepository
+    private val context: Context, private val repo: HomeRepository
 ) : HomeUsecase {
     override suspend fun fetchPopularMovies(): Flow<Resource<PopularResponse>> {
         return flow {
-            emit(Resource.Loading())
-            try {
-                repo.getPopularMovies().collect { dataResponse ->
-                    emit(Resource.Success(dataResponse.data?.toDomain()))
-                }
-            } catch (e: Exception) {
-                emit(Resource.Error(error = ERROR.General, errMsg = "Failed to fetch popular movies: ${e.message}"))
+            repo.getPopularMovies().collect { dataResponse ->
+                emit(Resource.Success(dataResponse.data?.toDomain()))
             }
         }
     }

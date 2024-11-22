@@ -7,10 +7,10 @@ import retrofit2.http.Query
 
 interface ApiService {
     @GET("movie/popular")
-    fun getDataPopular(
+    suspend fun getDataPopular(
         @Query("api_key") apiKey: String,
         @Query("language") language: String
-    ): Response<PopularResponse>
+    ): PopularResponse
 }
 
 /**
