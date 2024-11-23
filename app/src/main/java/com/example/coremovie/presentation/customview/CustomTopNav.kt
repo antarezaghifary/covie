@@ -38,12 +38,10 @@ class CustomTopNav @JvmOverloads constructor(
         }
     }
 
-    // Optional: Setter for title text
     fun setTitle(title: String) {
         txtTitle.text = title
     }
 
-    // Optional: Set click listeners
     fun setOnBackClickListener(listener: (View) -> Unit) {
         ivBack.setOnClickListener(listener)
     }

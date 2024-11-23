@@ -57,7 +57,6 @@ class CustomTextInputWIcon @JvmOverloads constructor(
         tilPassword.endIconDrawable = icon
     }
 
-    // Optional: Setter methods to configure the view programmatically
     fun setHintText(hint: String) {
         tilPassword.hint = hint
     }

@@ -74,6 +74,7 @@ dependencies {
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
     implementation(libs.multidex)
+    implementation(libs.splash)
 
     //viewmodel
     implementation(libs.dagger)

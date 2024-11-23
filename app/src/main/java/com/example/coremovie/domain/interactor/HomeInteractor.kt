@@ -5,10 +5,8 @@ import com.example.coremovie.data.repository.HomeRepository
 import com.example.coremovie.domain.model.popular.PopularResponse
 import com.example.coremovie.domain.model.popular.toDomain
 import com.example.coremovie.domain.usecase.HomeUsecase
-import com.example.coremovie.util.ERROR
 import com.example.coremovie.util.Resource
 import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.flow.flow
 import javax.inject.Inject
 

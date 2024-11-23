@@ -13,18 +13,12 @@ import javax.inject.Inject
 class HomeDataSource @Inject constructor(
     private val api: ApiService
 ) : HomeRepository {
-    //code
     override suspend fun getPopularMovies(): Flow<Resource<PopularResponse>> = flow {
-        emit(Resource.Loading()) // Emit loading state
-
-        // Make the API call
+        emit(Resource.Loading())
         val response = api.getDataPopular(apiKey = BuildConfig.API_KEY, language = "en-US")
-
         try {
-            // Check if the response is successful
             emit(Resource.Success(response))
         } catch (e: Exception) {
-            // Handle exceptions (like network errors)
             emit(Resource.Error(error = ERROR.General, "Exception: ${e.message}"))
         }
     }

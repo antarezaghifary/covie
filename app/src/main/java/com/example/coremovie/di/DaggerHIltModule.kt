@@ -18,7 +18,6 @@ import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
-import javax.inject.Named
 import javax.inject.Singleton
 
 @Module
@@ -64,7 +63,6 @@ object RetrofitModule {
 
     @Provides
     fun provideApiService(retrofit: Retrofit): ApiService {
-        // Create and return your ApiService instance (e.g., using Retrofit)
         return retrofit.create(ApiService::class.java)
     }
 
@@ -77,6 +75,4 @@ object RetrofitModule {
     fun provideGetItemsUseCase(context: Context, repository: HomeRepository): HomeUsecase {
         return HomeInteractor(context, repository)
     }
-
-    // Provide other dependencies
 }
