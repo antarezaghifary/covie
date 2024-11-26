@@ -1,14 +1,15 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
     <style name="Base.Theme.CoreMovie" parent="Theme.Material3.Light.NoActionBar">
-        <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <item name="android:windowFullscreen">true</item>
     </style>
 
     <style name="Theme.CoreMovie" parent="Base.Theme.CoreMovie" />
 
     <style name="Theme.App.SplashScreen" parent="Theme.SplashScreen">
-        <item name="windowSplashScreenBackground">@color/backgroundColor</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="statusBarBackground">@color/customBlue</item>
+        <item name="android:statusBarColor">@color/customBlue</item>
         <item name="postSplashScreenTheme">@style/Base.Theme.CoreMovie</item>
     </style>
 </resources>

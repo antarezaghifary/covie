@@ -6,6 +6,8 @@ import android.os.Bundle
 import android.os.SystemClock
 import android.view.LayoutInflater
 import android.view.View
+import android.view.WindowInsets
+import android.view.WindowInsetsController
 import android.widget.TextView
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
@@ -35,10 +37,9 @@ class MainActivity : AppCompatActivity() {
         val splashView = LayoutInflater.from(this).inflate(R.layout.splash_screen_layout, null)
         val textView = splashView.findViewById<TextView>(R.id.splash_text)
         textView.postDelayed({
-            // Fade in the text after 1 second
             textView.visibility = View.VISIBLE
             ObjectAnimator.ofFloat(textView, "alpha", 0f, 1f).apply {
-                duration = 1000  // 1 second fade-in
+                duration = 1000
                 start()
             }
         }, 1000)
@@ -46,13 +47,35 @@ class MainActivity : AppCompatActivity() {
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         splashScreen.setOnExitAnimationListener { splashScreenViewProvider ->
-            // Create a fade-out animation for the splash view
             val fadeOut = ObjectAnimator.ofFloat(splashView, "alpha", 1f, 0f)
             fadeOut.duration = 1000
             fadeOut.start()
         }
 
         initUI()
+    }
+
+    override fun onWindowFocusChanged(hasFocus: Boolean) {
+        super.onWindowFocusChanged(hasFocus)
+        if (hasFocus) {
+            setFullScreen()
+        }
+    }
+
+    private fun setFullScreen() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+            val windowInsetsController = window.insetsController
+            windowInsetsController?.hide(WindowInsets.Type.statusBars())
+            windowInsetsController?.hide(WindowInsets.Type.navigationBars())
+            windowInsetsController?.systemBarsBehavior =
+                WindowInsetsController.BEHAVIOR_DEFAULT
+        } else {
+            window.decorView.systemUiVisibility = (
+                    View.SYSTEM_UI_FLAG_FULLSCREEN
+                            or View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                            or View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
+                    )
+        }
     }
 
     private fun initUI() {
