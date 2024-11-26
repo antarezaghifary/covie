@@ -18,11 +18,6 @@ class SplashFragment : Fragment() {
 
     private var _binding: FragmentSplashBinding? = null
     private val binding get() = _binding!!
-    override fun onAttach(context: Context) {
-        super.onAttach(context)
-
-        requireActivity().setTheme(R.style.Theme_App_SplashScreen)
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -34,14 +29,5 @@ class SplashFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        initUI()
-    }
-
-    private fun initUI() {
-        CoroutineScope(Dispatchers.IO).launch {
-            delay(3000)
-            activity?.installSplashScreen()
-        }
     }
 }
